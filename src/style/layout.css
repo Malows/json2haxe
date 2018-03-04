@@ -1,0 +1,18 @@
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5rem auto;
+    grid-template-areas: "header header" "left right";
+}
+
+.header {
+    grid-area: header;
+}
+
+.json-input {
+    grid-area: left;
+}
+
+.haxe-output {
+    grid-area: right;
+}
