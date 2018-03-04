@@ -1,7 +1,7 @@
 module View exposing (view)
 
 import Model exposing (Model, JsonInput, HaxeOutput)
-import Html exposing (text, p, h1, h3, h4, div, button, hr, textarea, Html, input)
+import Html exposing (text, p, h1, h4, h6, div, button, hr, textarea, Html, input)
 import Html.Events exposing (onClick, onInput)
 import Html.Attributes exposing (class, placeholder, spellcheck, value)
 import Msg exposing (Msg(UpdateHaxe, UpdateJson, UpdateMainName))
@@ -9,21 +9,40 @@ import Msg exposing (Msg(UpdateHaxe, UpdateJson, UpdateMainName))
 
 view : Model -> Html Msg
 view model =
-    div [ class "main" ]
-        [ div [ class "header" ]
-            [ h1 [] [ text "json2haxe" ]
-            , h3 [] [ text "Handy json schema parsing tool" ]
-            ]
-        , div [ class "json-input" ]
-            [ h4 [] [ text "Name" ]
-            , mainNameInput Nothing
-            , h4 [] [ text "JSON input" ]
-            , jsonInput model.json
-            ]
-        , div [ class "haxe-output" ]
-            [ h4 [] [ text "Haxe clasess" ]
-            , haxeOutput model.haxe
-            ]
+    div
+        [ class "main" ]
+        [ headerSection
+        , inputSection model
+        , outputSection model
+        ]
+
+
+headerSection : Html Msg
+headerSection =
+    div
+        [ class "header" ]
+        [ h1 [] [ text "json2haxe" ]
+        , h4 [] [ text "Handy json schema parsing tool" ]
+        ]
+
+
+inputSection : Model -> Html Msg
+inputSection model =
+    div
+        [ class "json-input" ]
+        [ h6 [] [ text "Name" ]
+        , mainNameInput Nothing
+        , h6 [] [ text "JSON input" ]
+        , jsonInput model.json
+        ]
+
+
+outputSection : Model -> Html Msg
+outputSection model =
+    div
+        [ class "haxe-output" ]
+        [ h6 [] [ text "Haxe clasess" ]
+        , haxeOutput model.haxe
         ]
 
 
