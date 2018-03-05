@@ -26,9 +26,18 @@ updateJson newVal model =
         newJson =
             "\n" ++ newVal ++ "\n"
     in
-        ( { model | json = newJson }, Cmd.none )
+        { model | json = newJson }
+            |> update UpdateHaxe
 
 
+{-|
+
+    Para disparar la reactividad y evitar dos vueltas por el Elm Runtime tengo dos opciones:
+    { newModel } |> update Msg
+    { newModel | val1 = ..., val2 = ... }
+
+    Por ahora opto por la primera, ya veré como evoluciona la app
+-}
 updateHaxe : Model -> ( Model, Cmd Msg )
 updateHaxe model =
     ( { model | haxe = "| haxe |" ++ model.json ++ "| haxe |" }, Cmd.none )
