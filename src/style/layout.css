@@ -4,10 +4,12 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 10rem auto;
     grid-template-areas: "header header" "input-segment output-segment";
+    grid-gap: 20px;
 }
 
 .header {
     grid-area: header;
+    padding: 2rem;
 }
 
 .json-input {
@@ -15,7 +17,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 2rem 2rem 2rem auto;
-    grid-gap: 1rem;
+    grid-gap: 10px;
 }
 
 .haxe-output {
@@ -28,5 +30,7 @@
     flex: 1;
 }
 
-.padding { padding: .5rem; }
-.padding-left { padding-left: .5rem; }
+.padding { padding: 1rem; }
+.padding-left { padding-left: 1rem; }
+.margin-left { margin-left: 1rem; }
+.margin { margin: 1rem; }

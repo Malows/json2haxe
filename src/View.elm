@@ -22,17 +22,17 @@ headerSection =
     div
         [ class "header" ]
         [ h1 [] [ text "json2haxe" ]
-        , h4 [] [ text "Handy json schema parsing tool" ]
+        , h4 [ class "margin-left" ] [ text "Handy json schema parsing tool" ]
         ]
 
 
 inputSection : Model -> Html Msg
 inputSection model =
     div
-        [ class "json-input" ]
-        [ h6 [ id "name-label", class "padding" ] [ text "Name" ]
+        [ class "json-input padding" ]
+        [ h6 [ class "padding" ] [ text "Name" ]
         , mainNameInput Nothing
-        , h6 [ class "padding", id "json-label" ] [ text "JSON input" ]
+        , h6 [ class "padding" ] [ text "JSON input" ]
         , jsonInput model.json
         ]
 
@@ -49,7 +49,7 @@ outputSection model =
 jsonInput : JsonInput -> Html Msg
 jsonInput json =
     textarea
-        [ class "fullwidth"
+        [ class "margin-left"
         , onInput UpdateJson
         , spellcheck False
         , placeholder "Enter a valid JSON"
@@ -69,8 +69,8 @@ mainNameInput maybeName =
                     maybeName
     in
         input
-            [ id "name-input"
-            , placeholder "Main class name"
+            [ placeholder "Main class name"
+            , class "margin-left"
             , spellcheck False
             , onInput UpdateMainName
             , value name
