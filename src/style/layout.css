@@ -4,26 +4,21 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 10rem auto;
     grid-template-areas: "header header" "input-segment output-segment";
+    grid-gap: 20px;
 }
 
 .header {
     grid-area: header;
+    padding: 2rem;
 }
 
 .json-input {
-<<<<<<< HEAD
     grid-area: input-segment;
     display: grid;
-    grid-template-columns: 1fr 7fr;
-    grid-template-rows: 2rem 2rem auto;
-    grid-template-areas: "name-label name-input" "json-label json-label" "text-area text-area";
-    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2rem 2rem 2rem auto;
+    grid-gap: 10px;
 }
-
-#name-label { grid-area: name-label; }
-#name-input { grid-area: name-input; }
-#json-label { grid-area: json-label; }
-textarea { grid-area: text-area; }
 
 .haxe-output {
     grid-area: output-segment;
@@ -34,3 +29,8 @@ textarea { grid-area: text-area; }
 .haxe-output .code_display {
     flex: 1;
 }
+
+.padding { padding: 1rem; }
+.padding-left { padding-left: 1rem; }
+.margin-left { margin-left: 1rem; }
+.margin { margin: 1rem; }
