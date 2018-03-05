@@ -1,17 +1,22 @@
+* { margin: 0; padding: 0; }
+
 body {
-  font-family: 'Source Sans Pro', 'Trebuchet MS', 'Lucida Grande', 'Bitstream Vera Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Source Sans Pro', 'Lucida Grande', 'Helvetica Neue', sans-serif;
   margin: 0;
   color: #293c4b;
 }
 
-h1 {
-  font-size: 30px;
-}
+h1 { font-size: 42px; }
+h4 { font-size: 24px; }
+h6 { font-size: 16px; }
 
-textarea {
-    box-sizing: border-box;
-    width: 100%;
-}
+.stretch { flex: 1; }
+.fullwidth { width: 100%; }
+.expand { width: 100%; height: 100%; }
+.vertical-center { self-align: center; }
+
+.row { display: flex; flex-direction: row; }
+.padding { padding: 0.5rem; }
 
 .code_display {
     text-align: left;

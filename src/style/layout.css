@@ -1,8 +1,9 @@
 .main {
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 5rem auto;
-    grid-template-areas: "header header" "left right";
+    grid-template-rows: 10rem auto;
+    grid-template-areas: "header header" "input-segment output-segment";
 }
 
 .header {
@@ -10,9 +11,25 @@
 }
 
 .json-input {
-    grid-area: left;
+    grid-area: input-segment;
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    grid-template-rows: 2rem 2rem auto;
+    grid-template-areas: "name-label name-input" "json-label json-label" "text-area text-area";
+    grid-gap: 1rem;
 }
 
+#name-label { grid-area: name-label; }
+#name-input { grid-area: name-input; }
+#json-label { grid-area: json-label; }
+textarea { grid-area: text-area; }
+
 .haxe-output {
-    grid-area: right;
+    grid-area: output-segment;
+    display: flex;
+    flex-direction: column;
+}
+
+.haxe-output .code_display {
+    flex: 1;
 }
